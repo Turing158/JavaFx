@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane prefHeight="500.0" prefWidth="800.0" stylesheets="@css/StartFrame.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frame.controller.StartFrameController">
+    <Text fx:id="text1" text="！欢迎使用！" translateY="-100" />
+    <Text fx:id="text2" text="！没啥用APP！" translateY="-50" />
+    <Button fx:id="btn1" onAction="#start" translateX="73" translateY="100" />
+    <Button fx:id="btn2" onAction="#flower" translateX="250" translateY="135" />
+    <Button fx:id="btn3" onAction="#bar" translateX="360" translateY="145" />
+    <Text fx:id="text3" translateY="180" />
+</StackPane>

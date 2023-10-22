@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane prefHeight="500.0" prefWidth="800.0" stylesheets="@css/LoginFrame.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frame.controller.LoginFrameController">
+    <VBox fx:id="home" alignment="CENTER">
+        <Text fx:id="text1" text="！欢迎使用！" translateY="-87" />
+        <Text fx:id="text2" text="！没啥用APP！" translateY="-75" />
+    </VBox>
+    <VBox fx:id="login" alignment="CENTER" translateY="0">
+        <Text fx:id="title" text="登录" />
+        <VBox fx:id="blur">
+            <Label styleClass="user" text="用户名:" />
+            <TextField fx:id="user" styleClass="userInput" />
+            <Label styleClass="password" text="密码:" />
+            <PasswordField fx:id="password" styleClass="passwordInput" />
+            <Button fx:id="btnLogin" onAction="#login" styleClass="btnLogin" text="登录" />
+            <Button fx:id="btnReg" onAction="#reg" styleClass="btnReg" text="注册" />
+        </VBox>
+        <Text fx:id="tips"/>
+    </VBox>
+</StackPane>
