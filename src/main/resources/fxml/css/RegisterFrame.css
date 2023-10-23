@@ -12,8 +12,8 @@
     -fx-max-width: 350px;
     -fx-pref-height: 170px;
 }
-#login{
-    -fx-background-image: url("/img/loginBg.png");
+#reg{
+    -fx-background-image: url("/img/regBg.png");
     -fx-background-position: center;
     -fx-background-size: cover;
 }

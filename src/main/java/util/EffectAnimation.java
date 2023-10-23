@@ -1,12 +1,13 @@
 package util;
 
-import javafx.animation.FadeTransition;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
+import javafx.animation.*;
 import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
 public class EffectAnimation {
+//    用于元素的淡入淡出
     public void fadeEffect(Node node,double seconds,double waitTime){
         FadeTransition fadeFirst = new FadeTransition(Duration.seconds(seconds),node);
         fadeFirst.setFromValue(0);
@@ -25,5 +26,34 @@ public class EffectAnimation {
                 })
         );
         timeline.play();
+    }
+//    用于元素的横向移动
+    public TranslateTransition moveX(Node node,double seconds,double from,double to){
+        TranslateTransition translate = new TranslateTransition(Duration.seconds(seconds),node);
+        translate.setFromX(from);
+        translate.setToX(to);
+        return translate;
+    }
+//    用于元素的纵向移动
+    public TranslateTransition moveY(Node node,double seconds,double from,double to){
+        TranslateTransition translate = new TranslateTransition(Duration.seconds(seconds),node);
+        translate.setFromY(from);
+        translate.setToY(to);
+        return translate;
+    }
+//    用于元素动画设置成60帧
+    public Timeline set60fps(Transition transition){
+        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(8),e->{
+            transition.play();
+        }));
+        return timeline;
+    }
+//    用于页面切换
+    public Transition switchPage(Transition transition, Scene oldFrame, VBox oldFrameBox){
+        oldFrameBox.getChildren().add(oldFrame.getRoot());
+        transition.setOnFinished(event -> {
+            oldFrameBox.getChildren().remove(oldFrame.getRoot());
+        });
+        return transition;
     }
 }

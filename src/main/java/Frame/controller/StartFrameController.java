@@ -3,10 +3,14 @@ package Frame.controller;
 import Frame.LoginFrame;
 import Frame.MainStage;
 import javafx.animation.FadeTransition;
+import javafx.animation.PauseTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.scene.shape.Box;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -28,8 +32,10 @@ public class StartFrameController {
     Button btn3;
     @FXML
     Text text3;
+
     public void start() throws IOException {
         Stage stage = (Stage) text1.getScene().getWindow();
+        LoginFrameController.oldFrame = stage.getScene();
         stage.setScene(new LoginFrame().Frame());
         stage.show();
     }

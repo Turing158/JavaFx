@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.collections.FXCollections?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="Frame.controller.RegisterFrameController"
+           prefHeight="500.0" prefWidth="800.0"
+           stylesheets="@css/RegisterFrame.css">
+    <VBox fx:id="oldFrameBox" alignment="CENTER"/>
+    <VBox fx:id="reg" alignment="CENTER" translateY="-500">
+        <Text fx:id="title" text="注册" />
+        <VBox fx:id="blur">
+            <Label styleClass="user" text="用户名:" />
+            <TextField fx:id="user" styleClass="userInput" />
+            <Label styleClass="password" text="密码:" />
+            <PasswordField fx:id="password" styleClass="passwordInput" />
+            <Label styleClass="gender" text="性别" />
+            <ComboBox fx:id="gender" styleClass="genderInput" />
+
+            <Button fx:id="btnReg" onAction="#reg" styleClass="btnLogin" text="注册" />
+            <Button fx:id="btnLogin" onAction="#login" styleClass="btnReg" text="登录" />
+        </VBox>
+        <Text fx:id="tips" />
+    </VBox>
+</StackPane>
