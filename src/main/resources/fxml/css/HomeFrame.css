@@ -1,0 +1,5 @@
+#home{
+    -fx-background-image: url("/img/homeBg.png");
+    -fx-background-position: center;
+    -fx-background-size: cover;
+}
