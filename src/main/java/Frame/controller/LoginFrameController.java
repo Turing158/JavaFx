@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class LoginFrameController {
+    private Timeline timeline;
     static Scene oldFrame;
     @FXML
     VBox oldFrameBox;
@@ -51,6 +52,11 @@ public class LoginFrameController {
         effect.set60fps(transition).play();
     }
     public void login() throws SQLException {
+        if(timeline != null){
+            timeline.stop();
+        }
+        EffectAnimation effect = new EffectAnimation();
+        timeline = effect.fadeEffect(tips,0.3,2);
         if(user.getText().isEmpty() || password.getText().isEmpty()){
             tips.setText("请输入用户名和密码");
         }
@@ -68,6 +74,7 @@ public class LoginFrameController {
 
             }
         }
+        timeline.play();
     }
     public void reg() throws IOException {
         Stage stage = (Stage) btnReg.getScene().getWindow();

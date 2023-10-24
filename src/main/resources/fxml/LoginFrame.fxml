@@ -5,9 +5,9 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane prefHeight="500.0" prefWidth="800.0" stylesheets="@css/LoginFrame.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frame.controller.LoginFrameController">
+<StackPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frame.controller.LoginFrameController">
     <VBox fx:id="oldFrameBox" alignment="CENTER"/>
-    <VBox fx:id="login" alignment="CENTER" translateY="-500">
+    <VBox fx:id="login" alignment="CENTER" translateY="-500" stylesheets="@css/LoginFrame.css">
         <Text fx:id="title" text="登录" />
         <VBox fx:id="blur">
             <Label styleClass="user" text="用户名:" />

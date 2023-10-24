@@ -2,14 +2,14 @@ package Frame.controller;
 
 import Frame.LoginFrame;
 import Frame.MainStage;
-import javafx.animation.FadeTransition;
-import javafx.animation.PauseTransition;
-import javafx.animation.TranslateTransition;
+import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Box;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -20,6 +20,7 @@ import java.io.IOException;
 
 
 public class StartFrameController {
+    private Timeline timeline;
     @FXML
     Text text1;
     @FXML
@@ -31,6 +32,8 @@ public class StartFrameController {
     @FXML
     Button btn3;
     @FXML
+    VBox tips;
+    @FXML
     Text text3;
 
     public void start() throws IOException {
@@ -40,13 +43,24 @@ public class StartFrameController {
         stage.show();
     }
     public void flower() {
+        stopTimeLine();
         EffectAnimation effect = new EffectAnimation();
-        text3.setText("你点花干嘛");
-        effect.fadeEffect(text3,0.3,2);
+        text3.setText("你点花干嘛!");
+        tips.setMaxWidth(110);
+        timeline = effect.fadeEffect(tips,0.3,2);
+        timeline.play();
     }
     public void bar(){
+        stopTimeLine();
         EffectAnimation effect = new EffectAnimation();
-        text3.setText("喜欢动我火把？");
-        effect.fadeEffect(text3,0.3,2);
+        timeline = effect.fadeEffect(tips,0.3,2);
+        text3.setText("喜欢动我火把?");
+        tips.setMaxWidth(140);
+        timeline.play();
+    }
+    public void stopTimeLine(){
+        if(timeline != null){
+            timeline.stop();
+        }
     }
 }

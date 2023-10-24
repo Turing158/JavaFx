@@ -2,7 +2,7 @@
     -fx-padding: 0;
 }
 #title{
-    -fx-translate-y: -30px;
+    -fx-translate-y: 30px;
     -fx-font-weight: bolder;
     -fx-font-size: 40px;
 }
@@ -10,14 +10,14 @@
     -fx-background-radius: 10px;
     -fx-background-color: rgba(255, 255, 255, 0.3);
     -fx-max-width: 350px;
-    -fx-pref-height: 220px;
+    -fx-translate-y: 50px;
 }
 #reg{
     -fx-background-image: url("/img/regBg.png");
     -fx-background-position: center;
     -fx-background-size: cover;
 }
-.user,.password,.gender,.classname{
+.user,.password,.gender,.classname,.birthday{
     -fx-font-size: 16px;
     -fx-translate-y: 25px;
     -fx-translate-x: 40px;
@@ -30,30 +30,51 @@
 .gender{
     -fx-translate-x: 55px;
     -fx-font-size: 15px;
-    -fx-translate-y: 10px;
+    -fx-translate-y: 23px;
 }
 .classname{
     -fx-translate-x: 155px;
     -fx-font-size: 15px;
-    -fx-translate-y: -35px;
+    -fx-translate-y: -27px;
 }
-.userInput,.passwordInput,.genderInput,.classnameInput{
+.birthday{
+    -fx-translate-x: 25px;
+    -fx-font-size: 15px;
+    -fx-translate-y: -32px;
+}
+.userInput,.passwordInput,.genderInput,.classnameInput,.yearInput,.monthInput,.dayInput{
     -fx-max-width: 200px;
     -fx-pref-height: 30px;
-    -fx-translate-x: 100px;
     -fx-background-color: transparent;
     -fx-border-color: #666666;
     -fx-border-width: 0 0 1 0;
     -fx-font-size: 16px;
 }
+.userInput,.passwordInput,.genderInput,.yearInput{
+    -fx-translate-x: 100px;
+}
 .genderInput{
     -fx-max-width: 50px;
-    -fx-translate-y: -13px;
+    -fx-translate-y: -3px;
 }
 .classnameInput{
     -fx-max-width: 100px;
     -fx-translate-x: 200px;
-    -fx-translate-y: -56px;
+    -fx-translate-y: -51px;
+}
+.yearInput,.monthInput,.dayInput{
+    -fx-max-width: 30px;
+}
+.yearInput{
+    -fx-translate-y: -58px;
+}
+.monthInput{
+    -fx-translate-y: -86px;
+    -fx-translate-x: 175px;
+}
+.dayInput{
+    -fx-translate-y: -114px;
+    -fx-translate-x: 250px;
 }
 .userInput:hover,.passwordInput:hover{
     -fx-border-color: #ffffff;
@@ -62,18 +83,18 @@
     -fx-border-color: #131313;
 }
 .btnLogin,.btnReg{
-    -fx-translate-x: 60px;
-    -fx-translate-y: 20px;
-    -fx-pref-height: 30px;
+    -fx-translate-x: 90px;
+    -fx-translate-y: -70px;
+    -fx-min-height: 30px;
     -fx-max-width: 80px;
 }
 .btnReg{
-    -fx-translate-y: -10px;
-    -fx-translate-x: 220px;
+    -fx-translate-y: -40px;
+    -fx-translate-x: -90px;
 }
 #tips{
-    -fx-translate-y: 20px;
+    -fx-translate-y: -50px;
     -fx-font-size: 20px;
     -fx-font-weight: bold;
-    -fx-text-fill: red;
+    -fx-fill: darkred;
 }

@@ -10,5 +10,7 @@
     <Button fx:id="btn1" onAction="#start" translateX="73" translateY="100" />
     <Button fx:id="btn2" onAction="#flower" translateX="250" translateY="135" />
     <Button fx:id="btn3" onAction="#bar" translateX="360" translateY="145" />
-    <Text fx:id="text3" translateY="180" />
+    <VBox fx:id="tips" translateY="180" maxHeight="35" alignment="CENTER">
+        <Text fx:id="text3"/>
+    </VBox>
 </StackPane>

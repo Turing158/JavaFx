@@ -27,6 +27,7 @@ public class StudentService {
         else if(student.getGender().isEmpty()){
             return "InfoError";
         }
+        studentDao.addStudent(student);
         return "success";
     }
 }

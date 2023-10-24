@@ -8,7 +8,7 @@ import javafx.util.Duration;
 
 public class EffectAnimation {
 //    用于元素的淡入淡出
-    public void fadeEffect(Node node,double seconds,double waitTime){
+    public Timeline fadeEffect(Node node,double seconds,double waitTime){
         FadeTransition fadeFirst = new FadeTransition(Duration.seconds(seconds),node);
         fadeFirst.setFromValue(0);
         fadeFirst.setToValue(1);
@@ -25,7 +25,7 @@ public class EffectAnimation {
                     fadeFinish.play();
                 })
         );
-        timeline.play();
+        return timeline;
     }
 //    用于元素的横向移动
     public TranslateTransition moveX(Node node,double seconds,double from,double to){
@@ -55,5 +55,8 @@ public class EffectAnimation {
             oldFrameBox.getChildren().remove(oldFrame.getRoot());
         });
         return transition;
+    }
+    public void stopAnimation(Transition transition){
+        transition.stop();
     }
 }
