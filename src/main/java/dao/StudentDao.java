@@ -9,4 +9,5 @@ public interface StudentDao {
     Student getStudent(String username) throws SQLException;
 
     String getStudentPassword(String username) throws SQLException;
+    void addStudent(Student student) throws SQLException;
 }

@@ -21,4 +21,9 @@ public class StudentDaoImpl implements StudentDao{
     public String getStudentPassword(String username) throws SQLException {
         return ConnectionJDBC.queryColum("select password from student where name = " + username,"password");
     }
+
+    @Override
+    public void addStudent(Student student) throws SQLException {
+        ConnectionJDBC.updateSQL("insert into student values(" + student.getId() + ",'" + student.getName() + "','" + student.getClassname() + "','" + student.getGender() + "','" + student.getPhone() + "','" + student.getBorn()+ "','" + student.getPassword() + "')");
+    }
 }

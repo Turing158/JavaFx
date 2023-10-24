@@ -10,21 +10,34 @@
     -fx-background-radius: 10px;
     -fx-background-color: rgba(255, 255, 255, 0.3);
     -fx-max-width: 350px;
-    -fx-pref-height: 170px;
+    -fx-pref-height: 220px;
 }
 #reg{
     -fx-background-image: url("/img/regBg.png");
     -fx-background-position: center;
     -fx-background-size: cover;
 }
-.user,.password{
+.user,.password,.gender,.classname{
     -fx-font-size: 16px;
     -fx-translate-y: 25px;
     -fx-translate-x: 40px;
     -fx-font-weight: bold;
 
 }
-.userInput,.passwordInput{
+.password{
+    -fx-translate-x: 55px;
+}
+.gender{
+    -fx-translate-x: 55px;
+    -fx-font-size: 15px;
+    -fx-translate-y: 10px;
+}
+.classname{
+    -fx-translate-x: 155px;
+    -fx-font-size: 15px;
+    -fx-translate-y: -35px;
+}
+.userInput,.passwordInput,.genderInput,.classnameInput{
     -fx-max-width: 200px;
     -fx-pref-height: 30px;
     -fx-translate-x: 100px;
@@ -32,6 +45,15 @@
     -fx-border-color: #666666;
     -fx-border-width: 0 0 1 0;
     -fx-font-size: 16px;
+}
+.genderInput{
+    -fx-max-width: 50px;
+    -fx-translate-y: -13px;
+}
+.classnameInput{
+    -fx-max-width: 100px;
+    -fx-translate-x: 200px;
+    -fx-translate-y: -56px;
 }
 .userInput:hover,.passwordInput:hover{
     -fx-border-color: #ffffff;

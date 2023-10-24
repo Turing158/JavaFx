@@ -50,4 +50,8 @@ public class ConnectionJDBC{
         }
         return null;
     }
+    public static void updateSQL(String sql) throws SQLException {
+        getCon().prepareStatement(sql).executeUpdate(sql);
+    }
+
 }

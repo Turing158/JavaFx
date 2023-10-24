@@ -21,9 +21,10 @@
             <TextField fx:id="user" styleClass="userInput" />
             <Label styleClass="password" text="密码:" />
             <PasswordField fx:id="password" styleClass="passwordInput" />
-            <Label styleClass="gender" text="性别" />
+            <Label styleClass="gender" text="性别:" />
             <ComboBox fx:id="gender" styleClass="genderInput" />
-
+            <Label styleClass="classname" text="班级:" />
+            <ComboBox fx:id="classname" styleClass="classnameInput" />
             <Button fx:id="btnReg" onAction="#reg" styleClass="btnLogin" text="注册" />
             <Button fx:id="btnLogin" onAction="#login" styleClass="btnReg" text="登录" />
         </VBox>
