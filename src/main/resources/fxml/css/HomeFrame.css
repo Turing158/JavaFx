@@ -3,3 +3,20 @@
     -fx-background-position: center;
     -fx-background-size: cover;
 }
+.menu{
+    -fx-background-color: #f1f1f122;
+    -fx-pref-height: 500px;
+    -fx-max-width: 200px;
+}
+.closeMenuBtn{
+    -fx-background-color: transparent;
+    -fx-font-size: 20px;
+    -fx-translate-x: 155px;
+    -fx-translate-y: -10px;
+    -fx-text-fill: #f1f1f1;
+}
+.head{
+    -fx-background-color: #f1f1f1;
+    -fx-pref-height: 50px;
+    -fx-max-width: 50px;
+}

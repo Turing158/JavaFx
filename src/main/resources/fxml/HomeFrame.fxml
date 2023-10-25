@@ -3,9 +3,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Button?>
 <AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frame.controller.HomeFrameController">
     <VBox fx:id="oldFrame"/>
     <VBox fx:id="home" stylesheets="@css/HomeFrame.css" prefHeight="500.0" prefWidth="800.0">
-        <Text text="Home" />
+        <ImageView fx:id="head" styleClass="head"/>
+        <VBox fx:id="menu" styleClass="menu">
+            <Button fx:id="closeMenuBtn" text="×" styleClass="closeMenuBtn"/>
+        </VBox>
     </VBox>
 </AnchorPane>
