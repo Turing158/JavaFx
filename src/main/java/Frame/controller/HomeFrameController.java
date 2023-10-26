@@ -33,6 +33,8 @@ public class HomeFrameController {
     @FXML
     Text name;
     @FXML
+    Text id;
+    @FXML
     public void initialize() {
         headInit();
         EffectAnimation effect = new EffectAnimation();
@@ -58,6 +60,7 @@ public class HomeFrameController {
                 effect.moveX(head,0.15,10,5).play();
             });
             effect.fadeEmergeVanish(name,0.5,true);
+            effect.fadeEmergeVanish(id,0.5,true);
             headMove.play();
         }else{
             System.out.println("alreadyOpenMenu");
@@ -74,6 +77,7 @@ public class HomeFrameController {
                 effect.moveX(head,0.15,2,5).play();
             });
             effect.fadeEmergeVanish(name,0.1,false);
+            effect.fadeEmergeVanish(id,0.1,false);
             headMove.play();
         }else{
             System.out.println("alreadyCloseMenu");
