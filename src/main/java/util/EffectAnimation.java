@@ -1,5 +1,6 @@
 package util;
 
+import com.sun.scenario.animation.SplineInterpolator;
 import javafx.animation.*;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -27,11 +28,24 @@ public class EffectAnimation {
         );
         return timeline;
     }
+    public void fadeEmergeVanish(Node node,double seconds,boolean emerge){
+        FadeTransition fade = new FadeTransition(Duration.seconds(seconds),node);
+        if(emerge){
+            fade.setFromValue(0);
+            fade.setToValue(1);
+        }
+        else{
+            fade.setFromValue(1);
+            fade.setToValue(0);
+        }
+        set60fps(fade).play();
+    }
 //    用于元素的横向移动
     public TranslateTransition moveX(Node node,double seconds,double from,double to){
         TranslateTransition translate = new TranslateTransition(Duration.seconds(seconds),node);
         translate.setFromX(from);
         translate.setToX(to);
+        translate.setInterpolator(new SplineInterpolator(0.1,0.1,0.1,1));
         return translate;
     }
 //    用于元素的纵向移动
@@ -39,6 +53,7 @@ public class EffectAnimation {
         TranslateTransition translate = new TranslateTransition(Duration.seconds(seconds),node);
         translate.setFromY(from);
         translate.setToY(to);
+        translate.setInterpolator(new SplineInterpolator(0.1,0.1,0.1,1));
         return translate;
     }
 //    用于元素动画设置成60帧
@@ -49,13 +64,23 @@ public class EffectAnimation {
         return timeline;
     }
 //    用于页面切换
-    public Transition switchPage(Transition transition, Scene oldFrame, VBox oldFrameBox){
+    public void switchPage(Node node,double seconds,double from,double to,Scene oldFrame, VBox oldFrameBox){
+        TranslateTransition translate = moveY(node,seconds,from,to);
+        translate.setInterpolator(new SplineInterpolator(0.1,0.1,0.1,1));
         oldFrameBox.getChildren().add(oldFrame.getRoot());
-        transition.setOnFinished(event -> {
+        translate.setOnFinished(event -> {
             oldFrameBox.getChildren().remove(oldFrame.getRoot());
         });
-        return transition;
+        set60fps(translate).play();
     }
+    public Transition rotate(Node node,double seconds,double from,double to){
+        RotateTransition rotate = new RotateTransition(Duration.seconds(seconds),node);
+        rotate.setFromAngle(from);
+        rotate.setToAngle(to);
+        rotate.setInterpolator(new SplineInterpolator(0.1,0.1,0.1,1));
+        return rotate;
+    }
+//    用于停止动画
     public void stopAnimation(Transition transition){
         transition.stop();
     }

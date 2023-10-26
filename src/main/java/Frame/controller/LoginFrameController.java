@@ -1,5 +1,6 @@
 package Frame.controller;
 
+import Frame.HomeFrame;
 import Frame.RegisterFrame;
 import Frame.StartFrame;
 import com.sun.scenario.animation.SplineInterpolator;
@@ -46,12 +47,10 @@ public class LoginFrameController {
     @FXML
     public void initialize() {
         EffectAnimation effect = new EffectAnimation();
-        TranslateTransition translate1 = effect.moveY(login,0.5,-500,0);
-        translate1.setInterpolator(Interpolator.SPLINE(0.1,0.1,0.1,1));
-        Transition transition = effect.switchPage(translate1,oldFrame,oldFrameBox);
-        effect.set60fps(transition).play();
+        effect.switchPage(login,0.5,-500,0,oldFrame,oldFrameBox);
     }
-    public void login() throws SQLException {
+    public void login() throws SQLException, IOException {
+        boolean needTips = true;
         if(timeline != null){
             timeline.stop();
         }
@@ -70,11 +69,16 @@ public class LoginFrameController {
                 tips.setText("密码错误");
             }
             else if(state.equals("success")){
-                tips.setText("登录成功");
-
+                needTips = false;
+                Stage stage = (Stage) title.getScene().getWindow();
+                HomeFrameController.oldFrame = stage.getScene();
+                stage.setScene(new HomeFrame().Frame());
+                stage.show();
             }
         }
-        timeline.play();
+        if(needTips){
+            timeline.play();
+        }
     }
     public void reg() throws IOException {
         Stage stage = (Stage) btnReg.getScene().getWindow();

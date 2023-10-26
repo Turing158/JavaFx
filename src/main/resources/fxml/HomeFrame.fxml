@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Text?>
 <AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frame.controller.HomeFrameController">
-    <VBox fx:id="oldFrame"/>
-    <VBox fx:id="home" stylesheets="@css/HomeFrame.css" prefHeight="500.0" prefWidth="800.0">
-        <ImageView fx:id="head" styleClass="head"/>
-        <VBox fx:id="menu" styleClass="menu">
-            <Button fx:id="closeMenuBtn" text="×" styleClass="closeMenuBtn"/>
+
+    <VBox fx:id="oldFrameBox"/>
+    <VBox fx:id="home" prefHeight="500.0" prefWidth="800.0" stylesheets="@css/HomeFrame.css">
+        <VBox fx:id="main" onMouseClicked="#closeMenu">
+
         </VBox>
+        <VBox fx:id="menu" styleClass="menu" translateX="-140" translateY="-500">
+            <Text fx:id="name" styleClass="name" text="啊啊啊啊啊啊啊啊"/>
+        </VBox>
+        <ImageView fx:id="head" fitHeight="50.0" fitWidth="50.0" preserveRatio="true" translateX="5" translateY="-995" onMouseClicked="#headAction"/>
     </VBox>
 </AnchorPane>

@@ -1,22 +1,22 @@
-#home{
+*{
+    -fx-padding: 0;
+}
+#main{
     -fx-background-image: url("/img/homeBg.png");
-    -fx-background-position: center;
     -fx-background-size: cover;
+    -fx-min-height: 500px;
+    -fx-max-width: 800px;
 }
 .menu{
     -fx-background-color: #f1f1f122;
-    -fx-pref-height: 500px;
+    -fx-min-height: 500px;
     -fx-max-width: 200px;
 }
-.closeMenuBtn{
-    -fx-background-color: transparent;
-    -fx-font-size: 20px;
-    -fx-translate-x: 155px;
-    -fx-translate-y: -10px;
-    -fx-text-fill: #f1f1f1;
-}
-.head{
-    -fx-background-color: #f1f1f1;
-    -fx-pref-height: 50px;
-    -fx-max-width: 50px;
+.name{
+    -fx-translate-x: 65;
+    -fx-translate-y: 20;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-fill: #f1f1f1;
+    -fx-opacity: 0;
 }

@@ -12,7 +12,7 @@ public class MainStage extends Application{
         stage.setTitle("Starfall");
         stage.setHeight(500);
         stage.setWidth(800);
-        stage.setScene(new HomeFrame().Frame());
+        stage.setScene(new StartFrame().Frame());
         stage.setResizable(false);
         stage.show();
     }

@@ -1,5 +1,6 @@
 package Frame.controller;
 
+import Frame.HomeFrame;
 import Frame.LoginFrame;
 import Frame.MainStage;
 import javafx.animation.*;
@@ -38,8 +39,12 @@ public class StartFrameController {
 
     public void start() throws IOException {
         Stage stage = (Stage) text1.getScene().getWindow();
-        LoginFrameController.oldFrame = stage.getScene();
-        stage.setScene(new LoginFrame().Frame());
+//        正常用下面两条
+//        LoginFrameController.oldFrame = stage.getScene();
+//        stage.setScene(new LoginFrame().Frame());
+//        下面调试主页面用
+        HomeFrameController.oldFrame = stage.getScene();
+        stage.setScene(new HomeFrame().Frame());
         stage.show();
     }
     public void flower() {

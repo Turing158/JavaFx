@@ -68,10 +68,7 @@ public class RegisterFrameController {
         gender.setItems(FXCollections.observableArrayList("男","女"));
         classname.setItems(FXCollections.observableArrayList("class_1","class_2","class_3","class_4","class_5","class_6","class_7","class_8"));
         EffectAnimation effect = new EffectAnimation();
-        TranslateTransition translate1 = effect.moveY(reg,0.5,-500,0);
-        translate1.setInterpolator(Interpolator.SPLINE(0.1,0.1,0.1,1));
-        Transition transition = effect.switchPage(translate1,oldFrame,oldFrameBox);
-        effect.set60fps(transition).play();
+        effect.switchPage(reg,0.5,-500,0,oldFrame,oldFrameBox);
     }
     public void reg() throws SQLException {
         if(timeline != null){
