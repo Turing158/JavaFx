@@ -31,12 +31,16 @@ public class EffectAnimation {
     public void fadeEmergeVanish(Node node,double seconds,boolean emerge){
         FadeTransition fade = new FadeTransition(Duration.seconds(seconds),node);
         if(emerge){
+            node.setVisible(true);
             fade.setFromValue(0);
             fade.setToValue(1);
         }
         else{
             fade.setFromValue(1);
             fade.setToValue(0);
+            fade.setOnFinished(event ->{
+                node.setVisible(false);
+            });
         }
         set60fps(fade).play();
     }

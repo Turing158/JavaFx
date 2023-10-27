@@ -23,7 +23,9 @@ public class ConnectionJDBC{
         return con;
     }
     public static ResultSet querySQL(String sql) throws SQLException {
-        return getCon().prepareStatement(sql).executeQuery(sql);
+        ResultSet resultSet = getCon().prepareStatement(sql).executeQuery(sql);
+        con.close();
+        return resultSet;
     }
     public static Object queryStudent(String sql) throws SQLException {
         ResultSet result = querySQL(sql);
@@ -38,20 +40,26 @@ public class ConnectionJDBC{
             student.setBorn(result.getString("born"));
             students.add(student);
         }
+        result.close();
+        con.close();
         if(students.size() == 1){
             return students.get(0);
         }
         return students;
     }
     public static String queryColum(String sql,String colum) throws SQLException {
-        ResultSet result = querySQL(sql);
-        while (result.next()){
-            return result.getString(colum);
+        ResultSet resultSet = querySQL(sql);
+        String result = "";
+        while (resultSet.next()){
+            result =  resultSet.getString(colum);
         }
-        return null;
+        resultSet.close();
+        con.close();
+        return result;
     }
     public static void updateSQL(String sql) throws SQLException {
         getCon().prepareStatement(sql).executeUpdate(sql);
+        con.close();
     }
 
 }

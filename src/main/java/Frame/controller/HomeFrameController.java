@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import util.EffectAnimation;
 
 import java.io.InputStream;
@@ -82,5 +83,9 @@ public class HomeFrameController {
         }else{
             System.out.println("alreadyCloseMenu");
         }
+    }
+    public void toSet(){
+        Stage stage = (Stage) home.getScene().getWindow();
+        System.out.println("个人设置");
     }
 }
