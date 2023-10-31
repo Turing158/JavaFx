@@ -4,6 +4,7 @@ import javafx.animation.Timeline;
 import javafx.animation.Transition;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -18,9 +19,7 @@ public class MenuController {
     @FXML
     Text id;
     @FXML
-    HBox exit;
-    @FXML
-    Text exitText;
+    Button exit;
 
 
     public void openMenu(Node Head, Node Menu){
