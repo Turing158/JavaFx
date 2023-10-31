@@ -48,16 +48,7 @@ public class HomeFrameController {
     public void headAction(){
         if(!isOpenMenu){
             isOpenMenu = true;
-            EffectAnimation effect = new EffectAnimation();
-            timeline = effect.set60fps(effect.moveX(menu,0.3,-140,0));
-            timeline.play();
-            Transition headMove = effect.moveX(head,0.15,5,10);
-            headMove.setOnFinished(event -> {
-                effect.moveX(head,0.15,10,5).play();
-            });
-            effect.fadeEmergeVanish(menuController.name,0.5,true);
-            effect.fadeEmergeVanish(menuController.id,0.5,true);
-            headMove.play();
+            menuController.openMenu(head,menu);
         }else{
             System.out.println("alreadyOpenMenu");
         }
@@ -65,22 +56,10 @@ public class HomeFrameController {
     public void closeMenu(){
         if(isOpenMenu){
             isOpenMenu = false;
-            EffectAnimation effect = new EffectAnimation();
-            timeline = effect.set60fps(effect.moveX(menu,0.3,0,-140));
-            timeline.play();
-            Transition headMove = effect.moveX(head,0.15,5,2);
-            headMove.setOnFinished(event -> {
-                effect.moveX(head,0.15,2,5).play();
-            });
-            effect.fadeEmergeVanish(menuController.name,0.1,false);
-            effect.fadeEmergeVanish(menuController.id,0.1,false);
-            headMove.play();
+            menuController.closeMenu(head,menu);
         }else{
             System.out.println("alreadyCloseMenu");
         }
     }
-    public void toSet(){
-        Stage stage = (Stage) home.getScene().getWindow();
-        System.out.println("个人设置");
-    }
+
 }
