@@ -1,0 +1,22 @@
+#menu{
+    -fx-background-color: #f1f1f122;
+}
+.name{
+    -fx-translate-x: 65;
+    -fx-translate-y: 20;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-fill: #f1f1f1;
+    -fx-opacity: 0;
+}
+.id{
+    -fx-translate-x: 65;
+    -fx-translate-y: 20;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-fill: #a1a1a1;
+    -fx-opacity: 0;
+}
+.exit{
+    -fx-background-color: #f1f1f1;
+}

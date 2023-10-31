@@ -1,23 +1,21 @@
 package Frame.controller;
 
-import javafx.animation.Interpolator;
 import javafx.animation.Timeline;
 import javafx.animation.Transition;
-import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import util.EffectAnimation;
 
 import java.io.InputStream;
 
 public class HomeFrameController {
+    @FXML
+    private MenuController menuController;
     static Scene oldFrame;
     Timeline timeline;
     boolean isOpenMenu = false;
@@ -28,13 +26,10 @@ public class HomeFrameController {
     @FXML
     VBox main;
     @FXML
-    ImageView head;
-    @FXML
     VBox menu;
     @FXML
-    Text name;
-    @FXML
-    Text id;
+    ImageView head;
+
     @FXML
     public void initialize() {
         headInit();
@@ -60,8 +55,8 @@ public class HomeFrameController {
             headMove.setOnFinished(event -> {
                 effect.moveX(head,0.15,10,5).play();
             });
-            effect.fadeEmergeVanish(name,0.5,true);
-            effect.fadeEmergeVanish(id,0.5,true);
+            effect.fadeEmergeVanish(menuController.name,0.5,true);
+            effect.fadeEmergeVanish(menuController.id,0.5,true);
             headMove.play();
         }else{
             System.out.println("alreadyOpenMenu");
@@ -77,8 +72,8 @@ public class HomeFrameController {
             headMove.setOnFinished(event -> {
                 effect.moveX(head,0.15,2,5).play();
             });
-            effect.fadeEmergeVanish(name,0.1,false);
-            effect.fadeEmergeVanish(id,0.1,false);
+            effect.fadeEmergeVanish(menuController.name,0.1,false);
+            effect.fadeEmergeVanish(menuController.id,0.1,false);
             headMove.play();
         }else{
             System.out.println("alreadyCloseMenu");

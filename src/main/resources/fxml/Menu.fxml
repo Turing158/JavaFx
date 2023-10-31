@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<VBox fx:id="menu" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" maxWidth="200" minHeight="500" fx:controller="Frame.controller.MenuController" stylesheets="@css/Menu.css">
+        <Text fx:id="name" styleClass="name" text="啊啊啊啊啊啊啊啊"/>
+        <Text fx:id="id" styleClass="id" text="111111111111"/>
+        <HBox fx:id="exit" styleClass="exit" prefWidth="150" maxHeight="50">
+            <Text fx:id="exitText" styleClass="exitText" text="退出"/>
+        </HBox>
+    </VBox>

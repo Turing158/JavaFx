@@ -11,10 +11,7 @@
         <VBox fx:id="main" onMouseClicked="#closeMenu">
 
         </VBox>
-        <VBox fx:id="menu" styleClass="menu" translateX="-140" translateY="-500">
-            <Text fx:id="name" styleClass="name" text="啊啊啊啊啊啊啊啊"/>
-            <Text fx:id="id" styleClass="id" text="111111111111"/>
-        </VBox>
+        <fx:include fx:id="menu" source="Menu.fxml" translateY="-500" translateX="-140"/>
         <ImageView fx:id="head" fitHeight="50.0" fitWidth="50.0" preserveRatio="true" translateX="5" translateY="-995" onMouseClicked="#headAction"/>
     </VBox>
 </AnchorPane>
