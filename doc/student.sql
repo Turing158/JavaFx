@@ -5,7 +5,7 @@ create table student
     id       int          not null
         primary key,
     name     varchar(50)  null,
-    class    varchar(100) null,
+    classname    varchar(100) null,
     gender   varchar(10)  null,
     phone    int          null,
     born     datetime     null,

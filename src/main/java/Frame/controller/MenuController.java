@@ -19,7 +19,12 @@ public class MenuController {
     @FXML
     Text id;
     @FXML
+    Button self;
+    @FXML
+    Button setting;
+    @FXML
     Button exit;
+
 
 
     public void openMenu(Node Head, Node Menu){
@@ -30,8 +35,7 @@ public class MenuController {
         headMove.setOnFinished(event -> {
             effect.moveX(Head,0.15,10,5).play();
         });
-        effect.fadeEmergeVanish(name,0.5,true);
-        effect.fadeEmergeVanish(id,0.5,true);
+        effect.fadeEmergeVanish(0.5,true,name,id,self,setting,exit);
         headMove.play();
     }
     public void closeMenu(Node Head, Node Menu){
@@ -42,8 +46,7 @@ public class MenuController {
         headMove.setOnFinished(event -> {
             effect.moveX(Head,0.15,2,5).play();
         });
-        effect.fadeEmergeVanish(name,0.1,false);
-        effect.fadeEmergeVanish(id,0.1,false);
+        effect.fadeEmergeVanish(0.1,false,name,id,self,setting,exit);
         headMove.play();
     }
 }

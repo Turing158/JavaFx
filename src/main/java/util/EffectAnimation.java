@@ -28,21 +28,25 @@ public class EffectAnimation {
         );
         return timeline;
     }
-    public void fadeEmergeVanish(Node node,double seconds,boolean emerge){
-        FadeTransition fade = new FadeTransition(Duration.seconds(seconds),node);
-        if(emerge){
-            node.setVisible(true);
-            fade.setFromValue(0);
-            fade.setToValue(1);
+    public void fadeEmergeVanish(double seconds, boolean emerge, Node... nodes){
+        for (int i = 0; i < nodes.length; i++) {
+            FadeTransition fade = new FadeTransition(Duration.seconds(seconds),nodes[i]);
+            if(emerge){
+                nodes[i].setVisible(true);
+                fade.setFromValue(0);
+                fade.setToValue(1);
+            }
+            else{
+                fade.setFromValue(1);
+                fade.setToValue(0);
+                int finalI = i;
+                fade.setOnFinished(event ->{
+                    nodes[finalI].setVisible(false);
+                });
+            }
+            set60fps(fade).play();
         }
-        else{
-            fade.setFromValue(1);
-            fade.setToValue(0);
-            fade.setOnFinished(event ->{
-                node.setVisible(false);
-            });
-        }
-        set60fps(fade).play();
+
     }
 //    用于元素的横向移动
     public TranslateTransition moveX(Node node,double seconds,double from,double to){

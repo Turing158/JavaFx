@@ -17,6 +17,26 @@
     -fx-fill: #a1a1a1;
     -fx-opacity: 0;
 }
-.exit{
-    -fx-background-color: #1f1f1f99;
+.btnMenu{
+    -fx-background-color: transparent;
+    -fx-text-fill: #f1f1f1;
+    -fx-pref-width: 120px;
+    -fx-min-height: 40px;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-border-color: transparent;
+    -fx-border-width: 0 0 2 0;
+    -fx-translate-x: 40px;
+}
+.btnMenu:hover{
+    -fx-border-color: linear-gradient(to right,transparent,#131313, #131313,#131313,transparent);
+}
+#self{
+    -fx-translate-y: 40px;
+}
+#setting{
+    -fx-translate-y: 45px;
+}
+#exit{
+    -fx-translate-y: 50px;
 }

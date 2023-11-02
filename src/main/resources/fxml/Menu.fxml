@@ -6,7 +6,7 @@
 <VBox fx:id="menu" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" maxWidth="200" minHeight="500" fx:controller="Frame.controller.MenuController" stylesheets="@css/Menu.css">
     <Text fx:id="name" styleClass="name" text="啊啊啊啊啊啊啊啊"/>
     <Text fx:id="id" styleClass="id" text="111111111111"/>
-    <Button fx:id="self" text="个人主页"/>
-    <Button fx:id="setting" text="设置"/>
-    <Button fx:id="exit" text="退出"/>
+    <Button fx:id="self" text="个人主页" styleClass="btnMenu"/>
+    <Button fx:id="setting" text="设置" styleClass="btnMenu"/>
+    <Button fx:id="exit" text="退出" styleClass="btnMenu"/>
 </VBox>
